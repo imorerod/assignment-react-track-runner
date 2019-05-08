@@ -17,16 +17,19 @@ class App extends Component {
 
 
   clickNewRun = () => {
-    if(Number(this.state.newRun) > Number(this.state.longestRun)){
+    const newRun = parseInt(this.state.newRun);
+    const longestRun = parseInt(this.state.longestRun);
+    
+    if(newRun > longestRun){
       this.setState({
-        recentRun: this.state.newRun,
-        longestRun: this.state.newRun,
+        recentRun: newRun,
+        longestRun: newRun,
         newRun: '',
       })
     } else {
       this.setState({
-        recentRun: this.state.newRun,
-        longestRun: this.state.longestRun,
+        recentRun: newRun,
+        longestRun: longestRun,
         newRun: '',
       })
     }
